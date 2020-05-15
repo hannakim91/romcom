@@ -10,7 +10,8 @@ var saveCoverButton = document.querySelector('.save-cover-button');
 var homeButton = document.querySelector('.home-button');
 var form = document.querySelector('.form-view');
 var mainCover = document.querySelector('.main-cover');
-
+var showSavedView = document.querySelector('.saved-view');
+var viewSavedCoversButton = document.querySelector('.view-saved-button');
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -21,6 +22,7 @@ var currentCover;
 window.addEventListener('load', showCreatedCover);
 randomCoverButton.addEventListener('click', showRandomCover);
 makeYourOwnCoverButton.addEventListener('click', showForm);
+viewSavedCoversButton.addEventListener('click', showSavedCovers);
 
 // Create your event handlers and other functions here 👇
 function showCreatedCover() {
@@ -45,6 +47,13 @@ function showForm() {
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
 };
+
+function showSavedCovers() {
+  mainCover.classList.add('hidden');
+  showSavedView.classList.remove('hidden');
+  form.classList.add('hidden');
+
+}
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
