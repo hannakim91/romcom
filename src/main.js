@@ -16,29 +16,36 @@ var viewSavedCoversButton = document.querySelector('.view-saved-button');
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
+
 var currentCover;
 
 // Add your event listeners here 👇
-window.addEventListener('load', showCreatedCover);
+window.addEventListener('load', showRandomCover);
 randomCoverButton.addEventListener('click', showRandomCover);
 makeYourOwnCoverButton.addEventListener('click', showForm);
 viewSavedCoversButton.addEventListener('click', showSavedCovers);
 homeButton.addEventListener('click', showHome);
 
 // Create your event handlers and other functions here 👇
-function showCreatedCover() {
-  coverImage.src = covers[getRandomIndex(covers)];
-  coverTitle.innerText = titles[getRandomIndex(titles)];
-  tagline1.innerText = descriptors[getRandomIndex(descriptors)];
-  tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+  //math.random returns a number between 0-1, mult by array length
 };
 
 function showRandomCover() {
-  coverImage.src = covers[getRandomIndex(covers)];
-  coverTitle.innerText = titles[getRandomIndex(titles)];
-  tagline1.innerText = descriptors[getRandomIndex(descriptors)];
-  tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+  createCover();
+  coverImage.src = currentCover.cover;
+  coverTitle.innerText = currentCover.title;
+  tagline1.innerText = currentCover.tagline1;
+  tagline2.innerText = currentCover.tagline2
 };
+
+//function - new instance of class Cover
+
+function createCover() {
+  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+}
 
 function showForm() {
   // When user clicks 'Make Your Own Cover Button' show hidden form section
@@ -67,9 +74,4 @@ function showHome() {
   randomCoverButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
   makeYourOwnCoverButton.classList.remove('hidden');
-}
-
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-  //math.random returns a number between 0-1, mult by array length
 }

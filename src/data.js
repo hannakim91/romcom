@@ -1,5 +1,5 @@
 var covers = [
-  './assets/covets/bluebrocade.jpg',
+  './assets/bluebrocade.jpg',
   './assets/maskedmeeting.jpg',
   './assets/moonlitmeadow.jpg',
   './assets/picnic.jpg',
