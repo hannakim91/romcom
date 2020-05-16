@@ -12,6 +12,11 @@ var form = document.querySelector('.form-view');
 var mainCover = document.querySelector('.main-cover');
 var showSavedView = document.querySelector('.saved-view');
 var viewSavedCoversButton = document.querySelector('.view-saved-button');
+var coverInput = document.querySelector('.user-cover');
+var titleInput = document.querySelector('.user-title');
+var tagline1Input = document.querySelector('.user-desc1');
+var tagline2Input = document.querySelector('.user-desc2');
+var createNewBookButton = document.querySelector('.create-new-book-button')
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -25,6 +30,7 @@ randomCoverButton.addEventListener('click', showRandomCover);
 makeYourOwnCoverButton.addEventListener('click', showForm);
 viewSavedCoversButton.addEventListener('click', showSavedCovers);
 homeButton.addEventListener('click', showHome);
+createNewBookButton.addEventListener('click', showNewBook);
 
 // Create your event handlers and other functions here 👇
 
@@ -42,7 +48,6 @@ function showRandomCover() {
 };
 
 //function - new instance of class Cover
-
 function createCover() {
   currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
 }
@@ -74,4 +79,23 @@ function showHome() {
   randomCoverButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
   makeYourOwnCoverButton.classList.remove('hidden');
+}
+
+function makeNewBook() {
+  var currentCover = new Cover(coverInput.value, titleInput.value, tagline1Input.value, tagline2Input.value)
+
+  coverImage.src = currentCover.cover;
+  coverTitle.innerText = currentCover.title;
+  tagline1.innerText = currentCover.tagline1;
+  tagline2.innerText = currentCover.tagline2
+}
+
+function showNewBook(event) {
+  event.preventDefault();
+  makeNewBook();
+  showHome();
+
+  //covers.push(currentCover.cover);
+  titles.push(currentCover.title);
+  descriptors.push(currentCover.tagline1, currentCover.tagline2);
 }
