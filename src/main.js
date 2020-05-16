@@ -49,10 +49,6 @@ function showRandomCover() {
 
 //function - new instance of class Cover
 
-function createCover() {
-  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
-}
-
 function makeNewBook() {
   var currentCover = new Cover(coverInput.value, titleInput.value, tagline1Input.value, tagline2Input.value)
 
@@ -89,4 +85,14 @@ function showHome() {
   randomCoverButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
   makeYourOwnCoverButton.classList.remove('hidden');
+}
+
+function createCover() {
+  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+}
+
+function showNewBook(event) {
+  event.preventDefault();
+  makeNewBook();
+  showHome();
 }

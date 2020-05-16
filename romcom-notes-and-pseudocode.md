@@ -24,3 +24,13 @@ Currently: make my own button takes you back to main page for some reason?
 
 Cover Form view:
 <!-- save user input for cover image (URL of image), title string, descriptors and save into existing arrays -->
+
+
+iteration 3 pull request notes:
+### What's this PR do?
+- Added `makeNewBook()`, which uses user input variables to create a new instance of cover under the variable `currentCover`.
+### Where should the reviewer start?
+Lines 15-19
+Lines 52-54
+### How should this be manually tested?
+Go to cover forms view, fill out input fields (cover should be a link to an image), and hit the 'Make My Book' button.
