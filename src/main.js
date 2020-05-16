@@ -48,14 +48,8 @@ function showRandomCover() {
 };
 
 //function - new instance of class Cover
-
-function makeNewBook() {
-  var currentCover = new Cover(coverInput.value, titleInput.value, tagline1Input.value, tagline2Input.value)
-
-  coverImage.src = currentCover.cover;
-  coverTitle.innerText = currentCover.title;
-  tagline1.innerText = currentCover.tagline1;
-  tagline2.innerText = currentCover.tagline2
+function createCover() {
+  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
 }
 
 function showForm() {
@@ -87,12 +81,21 @@ function showHome() {
   makeYourOwnCoverButton.classList.remove('hidden');
 }
 
-function createCover() {
-  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+function makeNewBook() {
+  var currentCover = new Cover(coverInput.value, titleInput.value, tagline1Input.value, tagline2Input.value)
+
+  coverImage.src = currentCover.cover;
+  coverTitle.innerText = currentCover.title;
+  tagline1.innerText = currentCover.tagline1;
+  tagline2.innerText = currentCover.tagline2
 }
 
 function showNewBook(event) {
   event.preventDefault();
   makeNewBook();
   showHome();
+
+  //covers.push(currentCover.cover);
+  titles.push(currentCover.title);
+  descriptors.push(currentCover.tagline1, currentCover.tagline2);
 }
