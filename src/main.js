@@ -16,7 +16,8 @@ var coverInput = document.querySelector('.user-cover');
 var titleInput = document.querySelector('.user-title');
 var tagline1Input = document.querySelector('.user-desc1');
 var tagline2Input = document.querySelector('.user-desc2');
-var createNewBookButton = document.querySelector('.create-new-book-button')
+var createNewBookButton = document.querySelector('.create-new-book-button');
+var savedCoversSection = document.querySelector('.saved-covers-section');
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -32,6 +33,8 @@ viewSavedCoversButton.addEventListener('click', showSavedCovers);
 homeButton.addEventListener('click', showHome);
 createNewBookButton.addEventListener('click', showNewBook);
 saveCoverButton.addEventListener('click', saveCoverDM);
+viewSavedCoversButton.addEventListener('click', displaySavedCovers);
+
 // Create your event handlers and other functions here 👇
 
 function getRandomIndex(array) {
@@ -100,17 +103,40 @@ function showNewBook(event) {
   descriptors.push(currentCover.tagline1, currentCover.tagline2);
 }
 
+// function saveCoverDM() {
+//   var duplicateCover = savedCovers.find(cover => {
+//     var coverCheck =
+//       savedCovers.cover === currentCover.cover
+//       && savedCovers.title === currentCover.title
+//       && savedCovers.tagline1 === currentCover.tagline1
+//       && savedCovers.tagline2 === currentCover.tagline2
+//     return coverCheck;
+//   });
+//   console.log(duplicateCover);
+//   if (duplicateCover === undefined) {
+//       savedCovers.push(currentCover);
+//   }
+//   console.log(savedCovers);
+// }
+
 function saveCoverDM() {
-  var saveThisCover = new Cover(coverImage.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
-  var duplicateCover = savedCovers.find(cover => {
-    var coverCheck =
-      savedCovers.cover === saveThisCover.cover
-      && savedCovers.title === saveThisCover.title
-      && savedCovers.tagline1 === saveThisPoster.tagline1
-      && savedCovers.tagline2 === saveThisPoster.tagline2
-    return coverCheck;
-  });
-  if (duplicateCover === undefined) {
-      savedCovers.push(saveThisCover);
+  var duplicateCover = false;
+    for (var i = 0; i < savedCovers.length; i++ ) {
+      if (currentCover.cover === savedCovers[i].cover && currentCover.title === savedCovers[i].title && currentCover.tagline1 === savedCovers[i].tagline1 && currentCover.tagline2 === savedCovers[i].tagline2) {
+        duplicateCover = true;
+      }
+    }
+    if (duplicateCover === false) {
+    savedCovers.push(currentCover);
+    // console.log(savedCovers);
   }
 }
+
+// function saveCoverDM() {
+//   var checkCovers = savedCovers.filter(function(saveCover) {
+//     return currentCover.id === saveCover.id;
+//       });
+//       if (checkCovers.length === 0) {
+//         savedCovers.push(currentCover);
+//       }
+// }
