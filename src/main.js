@@ -31,7 +31,7 @@ makeYourOwnCoverButton.addEventListener('click', showForm);
 viewSavedCoversButton.addEventListener('click', showSavedCovers);
 homeButton.addEventListener('click', showHome);
 createNewBookButton.addEventListener('click', showNewBook);
-
+saveCoverButton.addEventListener('click', saveCoverDM);
 // Create your event handlers and other functions here 👇
 
 function getRandomIndex(array) {
@@ -98,4 +98,19 @@ function showNewBook(event) {
   //covers.push(currentCover.cover);
   titles.push(currentCover.title);
   descriptors.push(currentCover.tagline1, currentCover.tagline2);
+}
+
+function saveCoverDM() {
+  var saveThisCover = new Cover(coverImage.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
+  var duplicateCover = savedCovers.find(cover => {
+    var coverCheck =
+      savedCovers.cover === saveThisCover.cover
+      && savedCovers.title === saveThisCover.title
+      && savedCovers.tagline1 === saveThisPoster.tagline1
+      && savedCovers.tagline2 === saveThisPoster.tagline2
+    return coverCheck;
+  });
+  if (duplicateCover === undefined) {
+      savedCovers.push(saveThisCover);
+  }
 }
