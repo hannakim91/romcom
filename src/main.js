@@ -140,3 +140,17 @@ function saveCoverDM() {
 //         savedCovers.push(currentCover);
 //       }
 // }
+
+function displaySavedCovers() {
+  savedCoversSection.innerHTML = '';
+  for (var i = 0; i < savedCovers.length; i++) {
+    savedCoversSection.innerHTML +=
+    `<section class="main-cover" id = ${i}>
+      <img class="cover-image" src="${savedCovers[i].cover}">
+      <h2 class="cover-title">${savedCovers[i].title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+      <img class="price-tag" src="./assets/price.png">
+      <img class="overlay" src="./assets/overlay.png">
+    </section>`
+  }
+}
