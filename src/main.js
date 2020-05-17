@@ -1,4 +1,3 @@
-
 var coverImage = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var tagline = document.querySelector('.tagline');
@@ -25,12 +24,14 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
+
 window.addEventListener('load', showRandomCover);
 randomCoverButton.addEventListener('click', showRandomCover);
 makeYourOwnCoverButton.addEventListener('click', showForm);
 viewSavedCoversButton.addEventListener('click', showSavedCovers);
 homeButton.addEventListener('click', showHome);
 createNewBookButton.addEventListener('click', showNewBook);
+saveCoverButton.addEventListener('click', saveCoverDM);
 
 // Create your event handlers and other functions here 👇
 
@@ -95,7 +96,16 @@ function showNewBook(event) {
   makeNewBook();
   showHome();
 
-  //covers.push(currentCover.cover);
+  covers.push(currentCover.cover);
   titles.push(currentCover.title);
   descriptors.push(currentCover.tagline1, currentCover.tagline2);
+}
+
+function saveCoverDM() {
+  currentCover = new Cover(coverImage.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText)
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (!currentCover.cover === savedCovers[i].cover && !currentCover.title === savedCovers[i].title && !currentCover.tagline1 === savedCovers[i].tagline1 && !currentCover.tagline2 === savedCovers[i].tagline2) {
+      savedCovers.push(currentCover);
+    }
+  }
 }
