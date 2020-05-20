@@ -34,3 +34,28 @@ Lines 15-19
 Lines 52-54
 ### How should this be manually tested?
 Go to cover forms view, fill out input fields (cover should be a link to an image), and hit the 'Make My Book' button.
+
+// function saveCoverDM() {
+//   var duplicateCover = savedCovers.find(cover => {
+//     var coverCheck =
+//       savedCovers.cover === currentCover.cover
+//       && savedCovers.title === currentCover.title
+//       && savedCovers.tagline1 === currentCover.tagline1
+//       && savedCovers.tagline2 === currentCover.tagline2
+//     return coverCheck;
+//   });
+//   console.log(duplicateCover);
+//   if (duplicateCover === undefined) {
+//       savedCovers.push(currentCover);
+//   }
+//   console.log(savedCovers);
+// }
+
+// function saveCoverDM() {
+//   var checkCovers = savedCovers.filter(function(saveCover) {
+//     return currentCover.id === saveCover.id;
+//       });
+//       if (checkCovers.length === 0) {
+//         savedCovers.push(currentCover);
+//       }
+// }
