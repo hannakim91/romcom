@@ -50,6 +50,8 @@ When a user opens the page, it loads with a randomized instance of the Covers cl
 
 **"Make Your Own Cover" Feature:** **Make my book** button brings a user to a form that can be filled with their own RomCom cover ideas.
 
+![View saved covers](https://i.ibb.co/rf1XJHN/view-saved-covers.png)
+
 **"View Saved Covers" Feature:** When the **View Saved Covers** button is clicked, the view is changed to where saved instances of covers are displayed.
 
 **Cross-view Functionality:** The controls section for each page view is streamlined to include only the necessary buttons for that feature.
