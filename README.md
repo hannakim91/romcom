@@ -1,4 +1,4 @@
-![RomCom website](https://gist.github.com/hannakim91/016a7e33e310c9703488e0b9a878e728)
+![RomCom website](https://ibb.co/njnHzFt)
 
 # RomCom
 
