@@ -51,7 +51,9 @@ When a user opens the page, it loads with a randomized instance of the Covers cl
 **Cross-view Functionality:** The controls section for each page view is streamlined to include only the necessary buttons for that feature.
 ​
 ### Iteration 3: **Create A New Cover**
-​
+
+![User input fields](https://www.dropbox.com/s/jbxkoa3v9befaow/fill%20form.png?dl=0)
+
 **"Make Your Own Cover" Feature**: A user can save their own custom RomCom cover by filling in the available fields in this view and hitting the **Make my book** button.
 
 ### Iteration 4: **Save and View Covers**
