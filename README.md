@@ -1,5 +1,3 @@
-![RomCom Project Home View](https://i.ibb.co/NKm8ZMb/home-page.png)
-
 # RomCom
 
 ## Mod 1 Paired Project
@@ -35,7 +33,9 @@ This was a 7-day paired project.
 ## Progression:
 
 ### Iteration 0: **Main Page**
-​
+
+![RomCom Project Home View](https://i.ibb.co/NKm8ZMb/home-page.png)
+
 When a user opens the page, it loads with a randomized instance of the Covers class displayed in **Home** view.
 
 ### Iteration 1: **Show Random Cover**
@@ -45,6 +45,8 @@ When a user opens the page, it loads with a randomized instance of the Covers cl
  When a user clicks the **Show New Random Cover** button, a new instance of the Covers class is generated and displayed in **Home** view.
 
 ### Iteration 2: **Switching Views**
+
+![Make your own cover form](https://i.ibb.co/P5373Dr/Screen-Shot-2020-05-19-at-8-51-56-PM.png)
 
 **"Make Your Own Cover" Feature:** **Make my book** button brings a user to a form that can be filled with their own RomCom cover ideas.
 
