@@ -1,4 +1,4 @@
-![RomCom website](https://gist.github.com/hannakim91/016a7e33e310c9703488e0b9a878e728)
+![RomCom Project Home View](https://i.ibb.co/NKm8ZMb/home-page.png)
 
 # RomCom
 
@@ -40,6 +40,8 @@ When a user opens the page, it loads with a randomized instance of the Covers cl
 
 ### Iteration 1: **Show Random Cover**
 
+![RomCom Project: Show Random Cover Feature](https://i.ibb.co/0YM5qcJ/show-new-random-cover.png)
+
  When a user clicks the **Show New Random Cover** button, a new instance of the Covers class is generated and displayed in **Home** view.
 
 ### Iteration 2: **Switching Views**
@@ -51,18 +53,26 @@ When a user opens the page, it loads with a randomized instance of the Covers cl
 **Cross-view Functionality:** The controls section for each page view is streamlined to include only the necessary buttons for that feature.
 ​
 ### Iteration 3: **Create A New Cover**
+​
+![User input fields filled](https://i.ibb.co/hBzWKpX/fill-form.png)
 
-![User input fields](https://www.dropbox.com/s/jbxkoa3v9befaow/fill%20form.png?dl=0)
+![User generated cover](https://i.ibb.co/6WTynzB/user-created-cover.png)
 
 **"Make Your Own Cover" Feature**: A user can save their own custom RomCom cover by filling in the available fields in this view and hitting the **Make my book** button.
 
 ### Iteration 4: **Save and View Covers**
+
+![Save randomly generated cover](https://i.ibb.co/nzZ5z6P/view-saved-covers-2-covers.png)
+
+![Save user-generated cover](https://i.ibb.co/2n7Sw4w/view-saved-covers-3-covers.png)
 
 **"Save Cover" Feature:** A user can save covers they like by clicking the **Save Cover** button located in the controls section.
 
 This feature prevents user error by only allowing one instance of a cover to be saved.
 
 ### Iteration 5: **Delete Covers**
+
+![Shows one cover deleted from Saved Covers Section](https://i.ibb.co/QYgtFzJ/deleted-one-cover.png)
 
 A user can delete covers from the **Saved Covers** view by double-clicking on the one they don't like.
 
